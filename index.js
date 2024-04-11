@@ -27,7 +27,7 @@ let items = [
 ];
 
 async function getCurrentItem(){
-  const data = await db.query("SELECT * FROM items")
+  const data = await db.query("SELECT * FROM items ORDER BY  id ASC")
   items = data.rows
 
   return items.find((x) => x.id == currentItemId)
